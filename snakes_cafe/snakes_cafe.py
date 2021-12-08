@@ -1,8 +1,9 @@
 from typing import Counter
 
+order_list = []
 
-def opening():
-  menu = """
+def menu():
+  menutxt = """
   **************************************
   **    Welcome to the Snakes Cafe!   **
   **    Please see our menu below.    **
@@ -39,18 +40,27 @@ def opening():
   ** What would you like to order? **
   ***********************************
   """
-  print(menu)
+  print(menutxt)
+  
+  user_order = ''
+  while user_order != "quit":
+    user_order = input("> ")
+    order_list.append(user_order)
+    item_count = order_list.count(user_order)
+    if user_order == "quit":
+      break
+    print(f"{item_count} order of {user_order} have been added to your meal")
 
 
+
+# add order to order_list to show user their order
+# order needs to be counted, replace x/turn into a variable
+# count needs to be displayed in the confirmation
+# count/loop input until user types quit
+
+
+# tells terminal to run menu function
 if __name__ == "__main__":
-  opening()
+  menu()
 
-  Order typed into terminal(any words)
-  Count
-  empty list for orders
-
-  while loop not equal to quit
-  add logic for orders added with their counts
-
-  order needs to go into new list
-  count needs to be changed 
+  
